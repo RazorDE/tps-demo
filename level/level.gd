@@ -23,21 +23,21 @@ func _ready():
 		get_node("/root").msaa = Viewport.MSAA_DISABLED
 		
 	if (settings.ssao_quality == settings.SSAO_QUALITY_HIGH):
-		pass
+		$WorldEnvironment.environment.ssao_quality = $WorldEnvironment.environment.SSAO_QUALITY_HIGH
 	elif (settings.ssao_quality == settings.SSAO_QUALITY_LOW):
-		pass
+		$WorldEnvironment.environment.ssao_quality = $WorldEnvironment.environment.SSAO_QUALITY_LOW
 	else:
 		$WorldEnvironment.environment.ssao_enabled = false
 		
 	if (settings.resolution == settings.RESOLUTION_NATIVE):
 		pass
-	elif (settings.ssao_quality == settings.RESOLUTION_1080):
+	elif (settings.resolution == settings.RESOLUTION_1080):
 		var minsize=Vector2( OS.window_size.x * 1080 / OS.window_size.y, 1080.0)
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP_HEIGHT,minsize)
-	elif (settings.ssao_quality == settings.RESOLUTION_720):
+	elif (settings.resolution == settings.RESOLUTION_720):
 		var minsize=Vector2( OS.window_size.x * 720 / OS.window_size.y, 720.0)
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP_HEIGHT,minsize)
-	elif (settings.ssao_quality == settings.RESOLUTION_576):
+	elif (settings.resolution == settings.RESOLUTION_576):
 		var minsize=Vector2( OS.window_size.x * 576 / OS.window_size.y, 576.0)
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT,SceneTree.STRETCH_ASPECT_KEEP_HEIGHT,minsize)
 		
